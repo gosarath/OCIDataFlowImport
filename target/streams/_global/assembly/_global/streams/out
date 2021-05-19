@@ -1,0 +1,17 @@
+[0m[[0m[0mdebug[0m] [0m[0mIncluding from cache: oraclepki.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0mIncluding from cache: xdb6.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0mIncluding from cache: osdt_core.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0mIncluding from cache: simplefan.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0mIncluding from cache: spark-csv_2.11-1.5.0.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0mIncluding from cache: orai18n.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0mIncluding from cache: osdt_cert.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0mIncluding from cache: ucp.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0mIncluding from cache: scala-library-2.11.0.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0mIncluding from cache: ons.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0mIncluding from cache: ojdbc8.jar[0m
+[0m[[0m[0mdebug[0m] [0m[0mCalculate mappings...[0m
+[0m[[0m[0mdebug[0m] [0m[0mChecking every *.class/*.jar file's SHA-1.[0m
+[0m[[0m[0mdebug[0m] [0m[0mMerging files...[0m
+[0m[[0m[0mdebug[0m] [0m[0mMerging 'META-INF/MANIFEST.MF' with strategy 'discard'[0m
+[0m[[0m[0minfo[0m] [0m[0mStrategy 'discard' was applied to a file (Run the task at debug level to see details)[0m
+[0m[[0m[0minfo[0m] [0m[0mAssembly up to date: /Users/sagonugu/Desktop/spark/Mac/OCISample_DF_ADW/dataflow_samplesV1.0/scala/adwsparkupsert/target/scala-2.11/PLSQLLeadAllImport-assembly-1.0.jar[0m

@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.7.1
+Implementation-Title: Oracle Universal Connection Pool
+Implementation-Version: 18.3.0.0.0
+Build-Info: 180620
+Created-By: 25.171-b11 (Oracle Corporation)
+Main-Class: oracle.ucp.util.UCPManifestReader
+Implementation-Vendor: Oracle Corporation
+

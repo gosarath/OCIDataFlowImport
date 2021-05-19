@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.9.2
+Created-By: 1.8.0_131-b11 (Oracle Corporation)
+Sealed: true
+Main-Class: oracle.security.pki.OraclePKI
+Specification-Title: ENTSEC_DB18.1.0.0.0_GENERIC_171130.2230
+Class-Path: osdt_core.jar osdt_cert.jar ../oracle.osdt/osdt_core.jar .
+ ./oracle.osdt/osdt_cert.jar
+

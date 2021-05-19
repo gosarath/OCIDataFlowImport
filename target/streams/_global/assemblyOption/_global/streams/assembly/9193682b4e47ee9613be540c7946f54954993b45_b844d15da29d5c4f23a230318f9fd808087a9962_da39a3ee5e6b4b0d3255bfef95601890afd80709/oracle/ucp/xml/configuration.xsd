@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+  elementFormDefault = "qualified"
+  attributeFormDefault = "qualified"
+  version="1.0">
+  
+    <xs:attributeGroup name="connection-pool-attributes">
+      <xs:attribute name="connection-factory-class-name" type="xs:string" use="required"/>
+      <xs:attribute name="url" type="xs:string" use="required"/>
+      <xs:attribute name="user" type="xs:string"/>
+      <xs:attribute name="password" type="xs:string"/>
+      <xs:attribute name="wallet-file" type="xs:string"/>
+      <xs:attribute name="wallet-password" type="xs:string"/>
+      <xs:attribute name="initial-pool-size" type="xs:nonNegativeInteger"/>
+      <xs:attribute name="min-pool-size" type="xs:nonNegativeInteger"/>
+      <xs:attribute name="max-pool-size" type="xs:nonNegativeInteger"/>    
+      <xs:attribute name="fast-connection-failover-enabled" type="xs:boolean"/>     
+      <xs:attribute name="max-connection-reuse-count" type="xs:nonNegativeInteger"/>
+      <xs:attribute name="max-connection-reuse-time" type="xs:long"/>  
+      <xs:attribute name="max-idle-time" type="xs:nonNegativeInteger"/>
+      <xs:attribute name="max-statements" type="xs:nonNegativeInteger"/>
+      <xs:attribute name="abandoned-connection-timeout" type="xs:nonNegativeInteger"/>
+      <xs:attribute name="connection-harvest-max-count" type="xs:positiveInteger"/>
+      <xs:attribute name="connection-harvest-trigger-count" type="xs:nonNegativeInteger"/>
+      <xs:attribute name="inactive-connection-timeout" type="xs:nonNegativeInteger"/>
+      <xs:attribute name="connection-wait-timeout" type="xs:nonNegativeInteger"/>
+      <xs:attribute name="validate-connection-on-borrow" type="xs:boolean"/>
+      <xs:attribute name="sql-for-validate-connection" type="xs:string"/>
+      <xs:attribute name="timeout-check-interval" type="xs:nonNegativeInteger"/>
+      <xs:attribute name="property-cycle" type="xs:nonNegativeInteger"/>
+      <xs:attribute name="time-to-live-connection-timeout" type="xs:nonNegativeInteger"/>
+      <xs:attribute name="high-cost-connection-reuse-threshold" type="xs:nonNegativeInteger"/>
+      <xs:attribute name="connection-labeling-high-cost" type="xs:nonNegativeInteger"/>
+      <xs:attribute name="ons-configuration" type="xs:string"/>
+      <xs:attribute name="connection-labeling-callback" type="xs:string" />
+      <xs:attribute name="connection-affinity-callback" type="xs:string" />
+      <xs:attribute name="connection-initialization-callback" type="xs:string" />
+      <xs:attribute name="login-timeout" type="xs:nonNegativeInteger"/>
+      <xs:attribute name="seconds-to-trust-idle-connection" type="xs:nonNegativeInteger"/>
+      <xs:attribute name="connection-repurpose-threshold" type="xs:nonNegativeInteger"/>
+      <xs:attribute name="max-connections-per-service" type="xs:positiveInteger"/>
+      <xs:attribute name="max-connections-per-shard" type="xs:positiveInteger"/>
+    </xs:attributeGroup>
+    <xs:attributeGroup name="data-source-attributes">
+      <xs:attribute name="data-source-name" type="xs:string" use="required"/>
+      <xs:attribute name="description" type="xs:string"/>
+      <xs:attribute name="user" type="xs:string"/>
+      <xs:attribute name="password" type="xs:string"/>
+      <xs:attribute name="wallet-file" type="xs:string"/>
+      <xs:attribute name="wallet-password" type="xs:string"/>
+      <xs:attribute name="service" type="xs:string"/>
+    </xs:attributeGroup>
+  
+<xs:element name="ucp-properties">
+  <xs:complexType>
+    <xs:choice maxOccurs="unbounded">
+    
+      <xs:element name="connection-pool" minOccurs="1">
+        <xs:complexType>
+          <xs:choice maxOccurs="unbounded">
+            <xs:element name="data-source" minOccurs="1">
+              <xs:complexType>
+                <xs:choice maxOccurs="unbounded">
+                  <xs:element name="pdb-role" minOccurs="0">
+                    <xs:complexType>
+                      <xs:simpleContent>
+                        <xs:extension base="xs:string">
+                          <xs:attribute name="name" type="xs:string" use="required"/>
+                          <xs:attribute name="value" type="xs:string" use="required"/>
+                        </xs:extension>
+                      </xs:simpleContent>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:choice>
+                <xs:attributeGroup ref="data-source-attributes"/>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="connection-factory-property" minOccurs="0">
+              <xs:complexType>
+                <xs:simpleContent>
+                  <xs:extension base="xs:string">
+                    <xs:attribute name="name" type="xs:string" use="required"/>
+                    <xs:attribute name="value" type="xs:string" use="required"/>
+                  </xs:extension>
+                </xs:simpleContent>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="connection-property" minOccurs="0">    
+              <xs:complexType>
+                <xs:simpleContent>
+                  <xs:extension base="xs:string">
+                    <xs:attribute name="name" type="xs:string" use="required"/>
+                    <xs:attribute name="value" type="xs:string" use="required"/>
+                  </xs:extension>
+                </xs:simpleContent>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+          <xs:attribute name="connection-pool-name" type="xs:string"  use="required"/>
+          <xs:attribute name="shared" type="xs:boolean" default="false"/>
+          <xs:attribute name="is-xa-pool" type="xs:boolean" default="false"/>
+          <xs:attributeGroup ref="connection-pool-attributes"/>
+        </xs:complexType>
+      </xs:element>
+      
+    </xs:choice>
+  </xs:complexType>
+</xs:element> <!--end element ucp-properties-->
+</xs:schema>
